@@ -1,3 +1,11 @@
+## ▶️ Inicialización del Proyecto
+
+Desde la raíz del proyecto, levante los servicios usando:
+
+```bash
+docker-compose -f docker-compose-frontend.yml up --build
+```
+
 # FrontendEvents
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.10.
