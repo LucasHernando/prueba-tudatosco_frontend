@@ -1,0 +1,52 @@
+<div class="login-container text-center">
+
+  <img [src]="imagePath" alt="Logo TusDatos.co" class="logo-img mb-4" />
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email" required />
+        <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+          El email es obligatorio
+        </mat-error>
+        <mat-error *ngIf="loginForm.get('email')?.hasError('email')">
+          Email no válido
+        </mat-error>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Contraseña</mat-label>
+        <input matInput type="password" formControlName="password" required />
+        <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+          La contraseña es obligatoria
+        </mat-error>
+        <mat-error *ngIf="loginForm.get('password')?.hasError('minlength')">
+          Mínimo 6 caracteres
+        </mat-error>
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary" type="submit">
+        Iniciar sesión
+      </button>
+  
+      <button mat-button color="accent" type="button" (click)="openModal()"> 
+        Crear cuenta nueva
+      </button>
+
+
+      <!-- Toasts -->
+      <app-alert-toast
+      *ngIf="showSuccess"
+      [message]="'Usuario creado exitosamente.'"
+      type="success"
+      ></app-alert-toast>
+
+      <app-alert-toast
+      *ngIf="showError"
+      [message]="errorMessage"
+      type="error"
+      ></app-alert-toast>
+
+    </form>
+</div>
+  

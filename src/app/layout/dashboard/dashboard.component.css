@@ -1,0 +1,16 @@
+main {
+  overflow-y: auto;
+}
+
+.sidenav-container {
+  height: 100vh;
+}
+
+mat-sidenav {
+  width: 250px;
+  border-right: 1px solid #dee2e6;
+}
+
+mat-sidenav-content {
+  transition: margin-left 0.3s ease;
+}

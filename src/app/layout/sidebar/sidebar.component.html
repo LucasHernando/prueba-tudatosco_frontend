@@ -1,0 +1,16 @@
+<mat-nav-list>
+  <a mat-list-item routerLink="profile" routerLinkActive="active">
+    <mat-icon>home</mat-icon>
+    <span class="ms-2">Perfil Usuario</span>
+  </a>
+
+  <a mat-list-item routerLink="events" routerLinkActive="active">
+    <mat-icon>calendar_today</mat-icon>
+    <span class="ms-2">Eventos</span>
+  </a>
+
+  <a mat-list-item (click)="logout()">
+    <mat-icon>logout</mat-icon>
+    <span class="ms-2">Cerrar sesión</span>
+  </a>
+</mat-nav-list>

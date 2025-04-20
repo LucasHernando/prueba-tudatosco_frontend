@@ -1,0 +1,18 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav mode="side" [fixedInViewport]="true" fixedTopGap="0">
+    <app-sidebar (logoutEvent)="logout()"></app-sidebar>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <!-- Navbar ahora se mueve junto con el contenido -->
+    <app-navbar
+      [username]="username"
+      (logout)="logout()"
+      (toggleSidebar)="toggleSidebar()">
+    </app-navbar>
+
+    <main class="p-4 bg-light min-vh-100">
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

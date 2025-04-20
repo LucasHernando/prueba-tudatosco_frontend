@@ -1,0 +1,18 @@
+.table-responsive {
+    margin-top: 1rem;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+  }
+  
+  .pagination .page-link {
+    cursor: pointer;
+  }
+  
+  .page-item.disabled .page-link {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  
+  

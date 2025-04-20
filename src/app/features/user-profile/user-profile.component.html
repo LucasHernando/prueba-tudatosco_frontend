@@ -1,0 +1,25 @@
+<h2>Perfil del Usuario</h2>
+<p>Información personal y eventos asignados.</p>
+
+<mat-card *ngIf="!isLoading">
+  <mat-card-title>Información General</mat-card-title>
+  <mat-card-content>
+    <p><strong>Email:</strong> {{ userProfile.email }}</p>
+    <p><strong>Activo:</strong> {{ userProfile.active ? 'Sí' : 'No' }}</p>
+    <p><strong>Roles:</strong> {{ getRolesString() }}</p>
+
+  </mat-card-content>
+</mat-card>
+
+<mat-card *ngIf="userProfile.events.length > 0" class="mt-4">
+  <mat-card-title>Eventos Asignados</mat-card-title>
+  <mat-card-content>
+    <ul>
+      <li *ngFor="let event of userProfile.events">
+        <strong>{{ event.title }}</strong> - {{ event.status }}<br />
+        {{ event.start_date | date:'short' }} a {{ event.end_date | date:'short' }}<br />
+        {{ event.description }}
+      </li>
+    </ul>
+  </mat-card-content>
+</mat-card>

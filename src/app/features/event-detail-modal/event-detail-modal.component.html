@@ -1,0 +1,25 @@
+<div class="modal-header">
+    <h5 class="modal-title">Detalle del Evento</h5>
+    <button type="button" class="btn-close" (click)="close()"></button>
+  </div>
+  
+  <div class="modal-body" *ngIf="event">
+    <h4>{{ event.title }}</h4>
+    <p>{{ event.description }}</p>
+    <ul class="list-group mb-3">
+      <li class="list-group-item"><strong>Estado:</strong> {{ event.status }}</li>
+      <li class="list-group-item"><strong>Capacidad:</strong> {{ event.capacity }}</li>
+      <li class="list-group-item"><strong>Inicio:</strong> {{ event.start_date | date: 'short'}}</li>
+      <li class="list-group-item"><strong>Fin:</strong> {{ event.end_date | date: 'short'}}</li>
+    </ul>
+  
+    <h5>Sesiones Relacionadas</h5>
+    <ul class="list-group">
+      <li *ngFor="let session of sessions" class="list-group-item">
+        <strong>{{ session.title }}</strong> <br />
+        <span>{{ session.start_time | date: 'short' }} - {{ session.end_time | date: 'short' }}</span> <br />
+        <small>Capacidad: {{ session.capacity }}</small>
+      </li>
+    </ul>
+  </div>
+  
